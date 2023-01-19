@@ -52,19 +52,26 @@ img {
   flex-flow: column;
   align-items: center;
   padding: 40px;
+  padding-top: 20px;
   background: linear-gradient(30deg, #aaa, #eee);
 }
 
 .choose--img {
   display: flex;
   gap: 40px;
-  padding: 30px;
-  padding-top: 10px;
 }
 
 .sub-title {
-  padding: 10px;
+  margin-bottom: 20px;
   font-size: 24px;
+}
+
+.rock,
+.paper,
+.scissors {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 /* PLAYERS */
