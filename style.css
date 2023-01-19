@@ -7,16 +7,114 @@ FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
 
+/* GENERAL */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "VT323", monospace;
+  letter-spacing: 0.2rem;
+}
+
+img {
+  height: 130px;
 }
 
 .hidden {
   display: none;
 }
 
-img {
-  height: 130px;
+/* Main body styling */
+
+.main {
+  width: 600px;
+  height: auto;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000;
+}
+
+/* TITLE */
+.title--box {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 30px;
+  background: linear-gradient(30deg, #eee, #aaa);
+}
+
+/* CHOOSE YOURS styling */
+
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 40px;
+  background: linear-gradient(30deg, #aaa, #eee);
+}
+
+.choose--img {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  padding-top: 10px;
+}
+
+.sub-title {
+  padding: 10px;
+  font-size: 24px;
+}
+
+/* PLAYERS */
+
+.results {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  background: linear-gradient(30deg, #eee, #aaa);
+}
+
+.players--cpu {
+  display: flex;
+  gap: 100px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.players--0 {
+}
+
+.cpu {
+}
+
+/* RESULT */
+
+.result {
+  display: flex;
+  flex: 0 1 auto;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* SCORE */
+
+.game--score {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(30deg, #aaa, #eee);
+}
+
+/* FOOTER */
+
+.made--by {
+  text-align: center;
+  background: linear-gradient(30deg, #ddd, #888);
 }

@@ -14,81 +14,88 @@
     <title>RockPapeScissa</title>
   </head>
   <body>
-    <div class="title--box">
-      <h1 class="title-main">RockPapeScissa</h1>
-    </div>
-    <section class="container">
-      <h2 class="sub-title">Please choose one</h2>
-      <div class="rock">
-        <img src="images/rock.jpg" alt=" rock image" />
-        <p class="img--description">ROCK!</p>
+    <div class="main">
+      <div class="title--box">
+        <h1 class="title-main">RockPapeScissa</h1>
       </div>
-      <div class="paper">
-        <img src="images/paper.jpg" alt="paper image" />
-        <p class="img--description">PAPER!</p>
+      <section class="container">
+        <h2 class="sub-title">Please choose one</h2>
+        <div class="choose--img">
+          <div class="rock">
+            <img src="images/rock.jpg" alt=" rock image" />
+            <p class="img--description">ROCK!</p>
+          </div>
+          <div class="paper">
+            <img src="images/paper.jpg" alt="paper image" />
+            <p class="img--description">PAPER!</p>
+          </div>
+          <div class="scissors">
+            <img src="images/scissors.jpg" alt="scissors image" />
+            <p class="image--description">SCISSORS!</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="results">
+        <section class="players--cpu">
+          <div class="player player--0">
+            <h2>You chose:</h2>
+            <img
+              src="images/player01.jpg"
+              alt="player image"
+              class="player--image"
+            />
+            <div class="player--rock hidden">
+              <img src="images/rock.jpg" alt=" rock image" />
+              <p class="img--description">ROCK!</p>
+            </div>
+            <div class="player--paper hidden">
+              <img src="images/paper.jpg" alt="paper image" />
+              <p class="img--description">PAPER!</p>
+            </div>
+            <div class="player--scissors hidden">
+              <img src="images/scissors.jpg" alt="scissors image" />
+              <p class="image--description">SCISSORS!</p>
+            </div>
+          </div>
+
+          <div class="cpu">
+            <h2>CPU chose:</h2>
+            <img src="images/cpu.png" alt="cpu image" class="cpu--image" />
+            <div class="cpu--rock hidden">
+              <img src="images/rock.jpg" alt=" rock image" />
+              <p class="img--description">ROCK!</p>
+            </div>
+            <div class="cpu--paper hidden">
+              <img src="images/paper.jpg" alt="paper image" />
+              <p class="img--description">PAPER!</p>
+            </div>
+            <div class="cpu--scissors hidden">
+              <img src="images/scissors.jpg" alt="scissors image" />
+              <p class="image--description">SCISSORS!</p>
+            </div>
+          </div>
+        </section>
+        <section class="result">
+          <span class="result--win">You win!</span>
+          <span class="result--lose hidden">You lose!</span>
+          <span class="result--draw hidden">Draw!</span>
+        </section>
       </div>
-      <div class="scissors">
-        <img src="images/scissors.jpg" alt="scissors image" />
-        <p class="image--description">SCISSORS!</p>
-      </div>
-    </section>
 
-    <section class="result">
-      <p class="round--result"></p>
-    </section>
+      <section class="game--score">
+        <h3>ROUND: <span class="round--number">0</span></h3>
+        <h3>PLAYER:<span class="score--player">0</span></h3>
+        <h3>CPU:<span class="score--cpu"></span></h3>
+      </section>
 
-    <section class="players--cpu">
-      <div class="player player--0">
-        <h2>You chose:</h2>
-        <img
-          src="images/player01.jpg"
-          alt="player image"
-          class="player--image"
-        />
-        <div class="player--rock hidden">
-          <img src="images/rock.jpg" alt=" rock image" />
-          <p class="img--description">ROCK!</p>
-        </div>
-        <div class="player--paper hidden">
-          <img src="images/paper.jpg" alt="paper image" />
-          <p class="img--description">PAPER!</p>
-        </div>
-        <div class="player--scissors hidden">
-          <img src="images/scissors.jpg" alt="scissors image" />
-          <p class="image--description">SCISSORS!</p>
-        </div>
-      </div>
-
-      <div class="cpu">
-        <h2>CPU chose:</h2>
-        <img src="images/cpu.png" alt="cpu image" class="cpu--image" />
-        <div class="cpu--rock hidden">
-          <img src="images/rock.jpg" alt=" rock image" />
-          <p class="img--description">ROCK!</p>
-        </div>
-        <div class="cpu--paper hidden">
-          <img src="images/paper.jpg" alt="paper image" />
-          <p class="img--description">PAPER!</p>
-        </div>
-        <div class="cpu--scissors hidden">
-          <img src="images/scissors.jpg" alt="scissors image" />
-          <p class="image--description">SCISSORS!</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="game--score">
-      <h3>ROUND: <span class="round--number">0</span></h3>
-      <h3>PLAYER:<span class="score--player">0</span></h3>
-      <h3>CPU:<span class="score--cpu"></span></h3>
-    </section>
-
-    <!-- <div class="nav-bar">
+      <!-- <div class="nav-bar">
         <button>New Game</button>
         <button>Vs Player</button>
         <button>vs CPU</button>
     </div> -->
 
-    <section class="made--by"><p>Created by NeticDev</p></section>
+      <section class="made--by"><p>Created by NeticDev</p></section>
+    </div>
   </body>
 </html>
