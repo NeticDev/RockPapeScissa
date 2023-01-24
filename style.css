@@ -21,10 +21,6 @@ img {
   height: 130px;
 }
 
-.hidden {
-  display: none;
-}
-
 /* Main body styling */
 
 .main {
@@ -66,9 +62,12 @@ img {
   font-size: 24px;
 }
 
-.rock,
-.paper,
-.scissors {
+.rock--img0,
+.paper--img0,
+.scissors--img0,
+.rock--img1,
+.paper--img1,
+.scissors--img1 {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -94,10 +93,9 @@ h2 {
   text-align: center;
 }
 
-.players--0 {
-}
-
-.cpu {
+#player--image,
+#cpu--image {
+  height: 146px;
 }
 
 /* RESULT */
@@ -124,4 +122,9 @@ h2 {
 .made--by {
   text-align: center;
   background: linear-gradient(30deg, #ddd, #888);
+}
+
+/* Hidden class */
+.hidden {
+  display: none;
 }

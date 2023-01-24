@@ -21,18 +21,24 @@
       <section class="container">
         <h2 class="sub-title">Please choose one</h2>
         <div class="choose--img">
-          <div class="rock">
-            <img src="images/rock.jpg" alt=" rock image" />
-            <p class="img--description">ROCK!</p>
-          </div>
-          <div class="paper">
-            <img src="images/paper.jpg" alt="paper image" />
-            <p class="img--description">PAPER!</p>
-          </div>
-          <div class="scissors">
-            <img src="images/scissors.jpg" alt="scissors image" />
-            <p class="image--description">SCISSORS!</p>
-          </div>
+          <button class="btn btn-rock">
+            <div class="rock--img">
+              <img src="images/rock.jpg" alt="rock image" />
+              <p class="img--description">ROCK!</p>
+            </div>
+          </button>
+          <button class="btn btn-paper">
+            <div class="paper--img">
+              <img src="images/paper.jpg" alt="paper image" />
+              <p class="img--description">PAPER!</p>
+            </div>
+          </button>
+          <button class="btn btn-scissors">
+            <div class="scissors--img">
+              <img src="images/scissors.jpg" alt="scissors image" />
+              <p class="image--description">SCISSORS!</p>
+            </div>
+          </button>
         </div>
       </section>
 
@@ -43,17 +49,17 @@
             <img
               src="images/player01.jpg"
               alt="player image"
-              class="player--image"
+              id="player--image"
             />
-            <div class="player--rock hidden">
-              <img src="images/rock.jpg" alt=" rock image" />
+            <div class="rock--img0 hidden">
+              <img src="images/rock.jpg" alt="rock image" />
               <p class="img--description">ROCK!</p>
             </div>
-            <div class="player--paper hidden">
+            <div class="paper--img0 hidden">
               <img src="images/paper.jpg" alt="paper image" />
               <p class="img--description">PAPER!</p>
             </div>
-            <div class="player--scissors hidden">
+            <div class="scissors--img0 hidden">
               <img src="images/scissors.jpg" alt="scissors image" />
               <p class="image--description">SCISSORS!</p>
             </div>
@@ -61,32 +67,30 @@
 
           <div class="cpu">
             <h2>CPU chose:</h2>
-            <img src="images/cpu.png" alt="cpu image" class="cpu--image" />
-            <div class="cpu--rock hidden">
-              <img src="images/rock.jpg" alt=" rock image" />
+            <img src="images/cpu.png" alt="cpu image" id="cpu--image" />
+            <div class="rock--img1 hidden">
+              <img src="images/rock.jpg" alt="rock image" />
               <p class="img--description">ROCK!</p>
             </div>
-            <div class="cpu--paper hidden">
+            <div class="paper--img1 hidden">
               <img src="images/paper.jpg" alt="paper image" />
               <p class="img--description">PAPER!</p>
             </div>
-            <div class="cpu--scissors hidden">
+            <div class="scissors--img1 hidden">
               <img src="images/scissors.jpg" alt="scissors image" />
               <p class="image--description">SCISSORS!</p>
             </div>
           </div>
         </section>
         <section class="result">
-          <span class="result--win">You win!</span>
-          <span class="result--lose hidden">You lose!</span>
-          <span class="result--draw hidden">Draw!</span>
+          <span class="result--text">Are you ready?</span>
         </section>
       </div>
 
       <section class="game--score">
         <h3>ROUND: <span class="round--number">0</span></h3>
         <h3>PLAYER:<span class="score--player">0</span></h3>
-        <h3>CPU:<span class="score--cpu"></span></h3>
+        <h3>CPU:<span class="score--cpu">0</span></h3>
       </section>
 
       <!-- <div class="nav-bar">
@@ -97,5 +101,6 @@
 
       <section class="made--by"><p>Created by NeticDev</p></section>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
