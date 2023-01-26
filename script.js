@@ -25,47 +25,109 @@ let scorePlayer = 0;
 let scoreCpu = 0;
 
 // Random pick by CPU
-function cpuChoose() {
-  return Math.trunc(Math.random() * 3 + 1);
-}
-console.log(cpuChoose());
+
 // Cpu choses rock funtion
 function cpuRock() {
   cpuImg.classList.add("hidden");
+  imgPaper1.classList.add("hidden");
+  imgScissors1.classList.add("hidden");
   imgRock1.classList.remove("hidden");
 }
 // Cpu choses paper funtion
 function cpuPaper() {
   cpuImg.classList.add("hidden");
+  imgRock1.classList.add("hidden");
+  imgScissors1.classList.add("hidden");
   imgPaper1.classList.remove("hidden");
 }
 // Cpu choses scissors funtion
 function cpuScissors() {
   cpuImg.classList.add("hidden");
+  imgRock1.classList.add("hidden");
+  imgPaper1.classList.add("hidden");
   imgScissors1.classList.remove("hidden");
 }
 
-// Player choses rock
+// ********* Player choses rock *********
 btnRock.addEventListener("click", function () {
   // Display rock img
   playerImg.classList.add("hidden");
   imgRock0.classList.remove("hidden");
+  imgPaper0.classList.add("hidden");
+  imgScissors0.classList.add("hidden");
   round++;
   roundNum.textContent = `${round}`;
 
   // Display CPU choice
-  let cpuChoice = cpuChoose();
-  console.log(cpuChoose());
+  let cpuChoice = Math.trunc(Math.random() * 3 + 1);
   if (cpuChoice === 1) {
     cpuRock();
     document.querySelector(".result--text").textContent = "Draw!";
   } else if (cpuChoice === 2) {
     cpuPaper();
     document.querySelector(".result--text").textContent = "You lose! 🙊";
+    scoreCpu++;
+    cpuScore.textContent = `${scoreCpu}`;
   } else if (cpuChoice === 3) {
     cpuScissors();
     document.querySelector(".result--text").textContent = "You win! 🎉";
+    scorePlayer++;
+    playerScore.textContent = `${scorePlayer}`;
+  }
+});
+
+// ********* Player choses paper *********
+btnPaper.addEventListener("click", function () {
+  // Display rock img
+  playerImg.classList.add("hidden");
+  imgPaper0.classList.remove("hidden");
+  imgRock0.classList.add("hidden");
+  imgScissors0.classList.add("hidden");
+  round++;
+  roundNum.textContent = `${round}`;
+
+  // Display CPU choice
+  let cpuChoice = Math.trunc(Math.random() * 3 + 1);
+  if (cpuChoice === 1) {
+    cpuRock();
+    document.querySelector(".result--text").textContent = "You win! 🎉";
+    scorePlayer++;
+    playerScore.textContent = `${scorePlayer}`;
+  } else if (cpuChoice === 2) {
+    cpuPaper();
+    document.querySelector(".result--text").textContent = "Draw!";
+  } else if (cpuChoice === 3) {
+    cpuScissors();
+    document.querySelector(".result--text").textContent = "You lose! 🙊";
     scoreCpu++;
     cpuScore.textContent = `${scoreCpu}`;
+  }
+});
+
+//  ********* Player choses scissors  *********
+btnScissors.addEventListener("click", function () {
+  // Display rock img
+  playerImg.classList.add("hidden");
+  imgPaper0.classList.add("hidden");
+  imgRock0.classList.add("hidden");
+  imgScissors0.classList.remove("hidden");
+  round++;
+  roundNum.textContent = `${round}`;
+
+  // Display CPU choice
+  let cpuChoice = Math.trunc(Math.random() * 3 + 1);
+  if (cpuChoice === 1) {
+    cpuRock();
+    document.querySelector(".result--text").textContent = "You lose! 🙊";
+    scoreCpu++;
+    cpuScore.textContent = `${scoreCpu}`;
+  } else if (cpuChoice === 2) {
+    cpuPaper();
+    document.querySelector(".result--text").textContent = "You win! 🎉";
+    scorePlayer++;
+    playerScore.textContent = `${scorePlayer}`;
+  } else if (cpuChoice === 3) {
+    cpuScissors();
+    document.querySelector(".result--text").textContent = "Draw!";
   }
 });
