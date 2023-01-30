@@ -4,6 +4,7 @@
 const btnRock = document.querySelector(".btn-rock");
 const btnPaper = document.querySelector(".btn-paper");
 const btnScissors = document.querySelector(".btn-scissors");
+const btnReset = document.querySelector(".reset--button");
 
 const playerImg = document.getElementById("player--image");
 const cpuImg = document.getElementById("cpu--image");
@@ -130,4 +131,10 @@ btnScissors.addEventListener("click", function () {
     cpuScissors();
     document.querySelector(".result--text").textContent = "Draw!";
   }
+});
+
+btnReset.addEventListener("click", function () {
+  round = 0;
+  scorePlayer = 0;
+  scoreCpu = 0;
 });
