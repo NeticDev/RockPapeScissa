@@ -75,6 +75,14 @@ btnRock.addEventListener("click", function () {
     scorePlayer++;
     playerScore.textContent = `${scorePlayer}`;
   }
+
+  if (scorePlayer === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You win! 🎉";
+  } else if (scoreCpu === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You lose! 🙊";
+  }
 });
 
 // ********* Player choses paper *********
@@ -102,6 +110,14 @@ btnPaper.addEventListener("click", function () {
     document.querySelector(".result--text").textContent = "You lose! 🙊";
     scoreCpu++;
     cpuScore.textContent = `${scoreCpu}`;
+  }
+
+  if (scorePlayer === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You win! 🎉";
+  } else if (scoreCpu === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You lose! 🙊";
   }
 });
 
@@ -131,10 +147,24 @@ btnScissors.addEventListener("click", function () {
     cpuScissors();
     document.querySelector(".result--text").textContent = "Draw!";
   }
+
+  if (scorePlayer === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You win! 🎉";
+  } else if (scoreCpu === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You lose! 🙊";
+  }
 });
 
 btnReset.addEventListener("click", function () {
   round = 0;
   scorePlayer = 0;
   scoreCpu = 0;
+
+  roundNum.textContent = "0";
+  playerScore.textContent = "0";
+  cpuScore.textContent = "0";
+
+  document.querySelector(".modal--window").classList.add("hidden");
 });
