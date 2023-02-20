@@ -25,7 +25,29 @@ let round = 0;
 let scorePlayer = 0;
 let scoreCpu = 0;
 
+// Win round function
+function roundWin() {
+  document.querySelector(".result--text").textContent = "You win! 🎉";
+  scorePlayer++;
+  playerScore.textContent = `${scorePlayer}`;
+}
+
+// Draw round function
+function roundDraw() {
+  document.querySelector(".result--text").textContent = "Draw!";
+}
+
+// Lose round funtion
+function roundLose() {
+  document.querySelector(".result--text").textContent = "You lose! 🙊";
+  scoreCpu++;
+  cpuScore.textContent = `${scoreCpu}`;
+}
+
 // Random pick by CPU
+function cpuChoice() {
+  return Math.trunc(Math.random() * 3 + 1);
+}
 
 // Cpu choses rock funtion
 function cpuRock() {
@@ -49,6 +71,17 @@ function cpuScissors() {
   imgScissors1.classList.remove("hidden");
 }
 
+// Result of the match function
+function result() {
+  if (scorePlayer === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You win! 🎉";
+  } else if (scoreCpu === 3) {
+    document.querySelector(".modal--window").classList.remove("hidden");
+    document.querySelector(".result--reset").textContent = "You lose! 🙊";
+  }
+}
+
 // ********* Player choses rock *********
 btnRock.addEventListener("click", function () {
   // Display rock img
@@ -60,34 +93,24 @@ btnRock.addEventListener("click", function () {
   roundNum.textContent = `${round}`;
 
   // Display CPU choice
-  let cpuChoice = Math.trunc(Math.random() * 3 + 1);
-  if (cpuChoice === 1) {
+
+  if (cpuChoice() === 1) {
     cpuRock();
-    document.querySelector(".result--text").textContent = "Draw!";
-  } else if (cpuChoice === 2) {
+    roundDraw();
+  } else if (cpuChoice() === 2) {
     cpuPaper();
-    document.querySelector(".result--text").textContent = "You lose! 🙊";
-    scoreCpu++;
-    cpuScore.textContent = `${scoreCpu}`;
-  } else if (cpuChoice === 3) {
+    roundLose();
+  } else if (cpuChoice() === 3) {
     cpuScissors();
-    document.querySelector(".result--text").textContent = "You win! 🎉";
-    scorePlayer++;
-    playerScore.textContent = `${scorePlayer}`;
+    roundWin();
   }
 
-  if (scorePlayer === 3) {
-    document.querySelector(".modal--window").classList.remove("hidden");
-    document.querySelector(".result--reset").textContent = "You win! 🎉";
-  } else if (scoreCpu === 3) {
-    document.querySelector(".modal--window").classList.remove("hidden");
-    document.querySelector(".result--reset").textContent = "You lose! 🙊";
-  }
+  result();
 });
 
 // ********* Player choses paper *********
 btnPaper.addEventListener("click", function () {
-  // Display rock img
+  // Display paper img
   playerImg.classList.add("hidden");
   imgPaper0.classList.remove("hidden");
   imgRock0.classList.add("hidden");
@@ -96,34 +119,24 @@ btnPaper.addEventListener("click", function () {
   roundNum.textContent = `${round}`;
 
   // Display CPU choice
-  let cpuChoice = Math.trunc(Math.random() * 3 + 1);
-  if (cpuChoice === 1) {
+
+  if (cpuChoice() === 1) {
     cpuRock();
-    document.querySelector(".result--text").textContent = "You win! 🎉";
-    scorePlayer++;
-    playerScore.textContent = `${scorePlayer}`;
-  } else if (cpuChoice === 2) {
+    roundWin();
+  } else if (cpuChoice() === 2) {
     cpuPaper();
-    document.querySelector(".result--text").textContent = "Draw!";
-  } else if (cpuChoice === 3) {
+    roundDraw();
+  } else if (cpuChoice() === 3) {
     cpuScissors();
-    document.querySelector(".result--text").textContent = "You lose! 🙊";
-    scoreCpu++;
-    cpuScore.textContent = `${scoreCpu}`;
+    roundLose();
   }
 
-  if (scorePlayer === 3) {
-    document.querySelector(".modal--window").classList.remove("hidden");
-    document.querySelector(".result--reset").textContent = "You win! 🎉";
-  } else if (scoreCpu === 3) {
-    document.querySelector(".modal--window").classList.remove("hidden");
-    document.querySelector(".result--reset").textContent = "You lose! 🙊";
-  }
+  result();
 });
 
 //  ********* Player choses scissors  *********
 btnScissors.addEventListener("click", function () {
-  // Display rock img
+  // Display scissors img
   playerImg.classList.add("hidden");
   imgPaper0.classList.add("hidden");
   imgRock0.classList.add("hidden");
@@ -132,29 +145,18 @@ btnScissors.addEventListener("click", function () {
   roundNum.textContent = `${round}`;
 
   // Display CPU choice
-  let cpuChoice = Math.trunc(Math.random() * 3 + 1);
-  if (cpuChoice === 1) {
+  if (cpuChoice() === 1) {
     cpuRock();
-    document.querySelector(".result--text").textContent = "You lose! 🙊";
-    scoreCpu++;
-    cpuScore.textContent = `${scoreCpu}`;
-  } else if (cpuChoice === 2) {
+    roundLose();
+  } else if (cpuChoice() === 2) {
     cpuPaper();
-    document.querySelector(".result--text").textContent = "You win! 🎉";
-    scorePlayer++;
-    playerScore.textContent = `${scorePlayer}`;
-  } else if (cpuChoice === 3) {
+    roundWin();
+  } else if (cpuChoice() === 3) {
     cpuScissors();
-    document.querySelector(".result--text").textContent = "Draw!";
+    roundDraw();
   }
 
-  if (scorePlayer === 3) {
-    document.querySelector(".modal--window").classList.remove("hidden");
-    document.querySelector(".result--reset").textContent = "You win! 🎉";
-  } else if (scoreCpu === 3) {
-    document.querySelector(".modal--window").classList.remove("hidden");
-    document.querySelector(".result--reset").textContent = "You lose! 🙊";
-  }
+  result();
 });
 
 btnReset.addEventListener("click", function () {
